@@ -12,7 +12,7 @@ spec:
         # Roll the pods whenever the ConfigMap changes. Without this, editing config
         # (e.g. bannerColor) updates the ConfigMap but the running pods keep their old
         # env values until something else restarts them, so the change appears to do nothing.
-        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yml") . | sha256sum }}
     spec:
       containers:
         - name: shipit
